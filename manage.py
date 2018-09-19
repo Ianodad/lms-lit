@@ -7,7 +7,7 @@ from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager, Server
 
 # user imports models
-from app.models import Student
+from app.models import Student, Exercise, Course
 
 app = create_app('development')
 
@@ -22,9 +22,10 @@ manager.add_command('server', Server)
 migrate = Migrate(app, db)
 manager.add_command('db', MigrateCommand)
 
+
 @manager.shell
 def make_shell_context():
-    return dict(app=app, db=db, Student=Student)
+    return dict(app=app, db=db, Student=Student, Exercise=Exercise, Course=Course)
 
 
 # intiate migrate class

@@ -1,11 +1,14 @@
 import os
+import json
 
 from config import APP_STATIC, APP_ROOT
 
 
-def Questions():
+# def Questions():
 
-    with open(os.path.join(APP_STATIC, 'content.txt'), "r") as f:
-        content = f.read()
+#     with open(os.path.join(APP_STATIC, 'content.txt'), "r") as json_file:
+#         data = json.load(json_file)
 
-    return content
+#     course = data["Course 1"]
+
+#     return course

@@ -18,16 +18,13 @@ from .forms import CourseForm, ExerciseForm, AnswersForm
 # import models
 from ..models import Student, Course, Exercise
 
-from ..content import Questions
+# from ..content import Questions
 # with open(os.path.join(APP_STATIC, 'content.txt')) as f:
 #     content = f.read()
 
 #     print(content)
 # with open('content.txt', 'r') as f:
 #     data = f.readlines()
-
-word = Questions()
-print(word)
 
 
 @main.route('/')
@@ -38,6 +35,8 @@ def index():
     courses = Course.get_courses()
 
     title = 'Home is best'
+
+    # new = Questions()
 
     return render_template('index.html', title=title, courses=courses)
 

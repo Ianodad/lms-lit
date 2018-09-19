@@ -1,6 +1,5 @@
-#!/bin/sh
-'''exec' "/home/renegade/Documents/Moringa Core/Python/week 5/lms-lite/virtual/bin/python" "$0" "$@"
-' '''
+#!/home/yyvonne/Desktop/lms-lit/virtual/bin/python
+
 # -*- coding: utf-8 -*-
 import re
 import sys

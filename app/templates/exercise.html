@@ -6,6 +6,11 @@
 
 <div class="container-fluid">
 
+    {% for pitch in posts %}
+
+    <h1>{{exercise.question}}</h1>
+    {{ wtf.quick_form(answersForm) }}
+    {% endfor %}
 
 </div>
 

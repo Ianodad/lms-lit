@@ -17,8 +17,14 @@ class ExerciseForm(FlaskForm):
     '''
 
     '''
-    exercise = StringField('Your title here', validators=[Required()])
+    # exercise = StringField('Your title here', validators=[Required()])
     question = StringField(
         'Whats your question on this topic', validators=[Required()])
-    answer = StringField('What is you answer', validators=[Required()])
     submit = SubmitField('Submit')
+
+
+class AnswersForm(FlaskForm):
+    '''
+    anwser to questions
+    '''
+    answer = StringField('What is you answer', validators=[Required()])

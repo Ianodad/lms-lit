@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for, abort
 # settings.py
 import os
-from config import APP_STATIC
+from config import APP_STATIC, APP_ROOT
 
 # importing main from main blueprint
 from . import main
@@ -13,15 +13,21 @@ from flask_login import login_required, current_user
 # importing wft
 from flask_wtf import FlaskForm
 
-from .forms import CourseForm, ExerciseForm
+from .forms import CourseForm, ExerciseForm, AnswersForm
 
 # import models
 from ..models import Student, Course, Exercise
+
+from ..content import Questions
 # with open(os.path.join(APP_STATIC, 'content.txt')) as f:
 #     content = f.read()
 
+#     print(content)
 # with open('content.txt', 'r') as f:
 #     data = f.readlines()
+
+word = Questions()
+print(word)
 
 
 @main.route('/')
@@ -87,13 +93,12 @@ def newexercise(id):
     '''
     exerciseForm = ExerciseForm()
 
-    if exercise.validate_on_submit():
-        exercise = exerciseForm. exercise.data
+    if exerciseForm.validate_on_submit():
+        # exercise = exerciseForm. exercise.data
         question = exerciseForm.question.data
-        answers = exerciseForm.answers.data
+        # answers = exerciseForm.answers.data
 
-        new_exercise = Exercise(
-            exercise=exercise, question=question, answers=answers, course_id=id)
+        new_exercise = Exercise(question=question, course_id=id)
         new_exercise.save_exercise()
 
         return redirect(url_for('main.curriculum'))
@@ -106,5 +111,18 @@ def exercise(id):
     '''
     display exercise of course based on id
     '''
+    answersForm = AnswersForm()
+    if answersForm.validate_on_submit():
+        answer = exerciseForm.answer.data
+        new_exercise = Exercise(
+            answer=answer, exercise_id=id, student_id=current_user.id, course_id=id)
+        new_exercise.save_exercise()
+
     exercise = Exercise.get_exercise(id)
-    return render_template('exercises.html', exercise=exercise)
+
+    return render_template('exercises.html', exercise=exercise, answersForm=answersForm)
+
+
+[
+
+]

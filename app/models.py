@@ -115,7 +115,7 @@ class Exercise(db.Model):
     @classmethod
     def get_exercise(cls, id):
         '''
-        querys database for an exercise
+        querys database for an exercise based on the course id
         '''
-        exercise = Exercise.query.filter_by(id=id).first()
+        exercise = Exercise.query.filter_by(course_id=id).all()
         return exercise

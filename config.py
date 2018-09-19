@@ -1,11 +1,15 @@
 import os
 
+APP_ROOT = os.path.dirname(os.path.abspath(
+    __file__))   # refers to application_top
+APP_STATIC = os.path.join(APP_ROOT, 'static')
+
 
 class Config:
     '''
     General config parent class
     '''
-    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://renegade:pitch@localhost/pitch'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://renegade:lmslite@localhost/lmslite'
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
     # #  email configurations
@@ -30,6 +34,7 @@ class ProdConfig(Config):
 
 
 class DevConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://renegade:lmslite@localhost/lmslite'
 
     DEBUG = True
 

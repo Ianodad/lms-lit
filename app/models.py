@@ -21,9 +21,9 @@ class Student(db.Model):
     email = db.Column(db.String(255), unique=True, index=True)
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
-    courses_id = db.relationship('Courses', backref='students', lazy="dynamic")
+    courses_id = db.relationship('Course', backref='students', lazy="dynamic")
     exercise_id = db.relationship(
-        'Exercises', backref='students', lazy="dynamic")
+        'Exercise', backref='students', lazy="dynamic")
 
     @property
     def password(self):
@@ -57,7 +57,7 @@ class Course(db.Model):
     student_id = db.Column(db.Integer, db.ForeignKey("students.id"))
     # from foreign key
     exercise_id = db.relationship(
-        'Exercises', backref='courses', lazy="dynamic")
+        'Exercise', backref='courses', lazy="dynamic")
 
     def save_course(self):
         '''

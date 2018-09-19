@@ -57,15 +57,15 @@ def newcourse():
     courseForm = CourseForm()
 
     if courseForm.validate_on_submit():
-        title = courseForm.course.data
+        course = courseForm.course.data
         content = courseForm.content.data
 
-        new_course = Course(course=title, content=content)
+        new_course = Course(course=course, content=content)
         new_course.save_course()
 
         return redirect(url_for('main.curriculum'))
 
-    return render_template('newcourse.html', content=content, courseForm=courseForm)
+    return render_template('newcourse.html', courseForm=courseForm)
 
 
 @main.route('/curriculum')
@@ -90,7 +90,7 @@ def newexercise(id):
     if exercise.validate_on_submit():
         exercise = exerciseForm. exercise.data
         question = exerciseForm.question.data
-        answers = eexerciseForm.answers.data
+        answers = exerciseForm.answers.data
 
         new_exercise = Exercise(
             exercise=exercise, question=question, answers=answers, course_id=id)
@@ -98,7 +98,7 @@ def newexercise(id):
 
         return redirect(url_for('main.curriculum'))
 
-    return render_template('newexercise.html', title='title')
+    return render_template('newexercise.html', title='title', exerciseForm=exerciseForm)
 
 
 @main.route('/exercise/<int:id>')

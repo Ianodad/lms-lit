@@ -1,0 +1,20 @@
+macro displayCourses(courses)
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+{% block content %}
+
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-6">
+            {{macro.displayCourses(courses)}}
+        </div>
+        <div class="col-md-6">
+            {{macro.displayExercise(exercises)}}
+            div
+        </div>
+    </div>
+
+    {% endblock %}

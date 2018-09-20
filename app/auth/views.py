@@ -18,7 +18,7 @@ def register():
     '''
     geting data from auth form registratin form
     '''
-    form = RegistrationForm()
+    form = StudentForm()
     if form.validate_on_submit():
         student = Student(username=form.username.data,
                           password=form.password.data, email=form.email.data)

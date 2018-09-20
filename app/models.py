@@ -9,9 +9,9 @@ from . import login_manager
 # class Teacher(db.Model):
 
 
-class Student(db.Model):
+class Student(UserMixin, db.Model):
     '''
-    student class model 
+    student class model
     '''
     __tablename__ = 'students'
 
@@ -37,11 +37,11 @@ class Student(db.Model):
         return check_password_hash(self.pass_secure, password)
 
     def __repr__(self):
-        return f'User {self.username}'
+        return f'Student {self.username}'
 
     @login_manager.user_loader
     def load_user(user_id):
-        return User.query.get(int(user_id))
+        return Student.query.get(int(user_id))
 
 
 class Course(db.Model):

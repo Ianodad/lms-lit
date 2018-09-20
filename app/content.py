@@ -8,20 +8,20 @@ from random import sample, shuffle
 from config import APP_ROOT, APP_STATIC
 
 
-def Courses():
+def Courses(course):
 
     with open(os.path.join(APP_STATIC, 'content.json'), "r") as json_file:
         data = json.load(json_file)
-        course = data["Computer programming"]
+        course = data[course]
     # print(course)
     return course
 
 
-def Excercise():
+def Excercise(excercise):
 
     with open(os.path.join(APP_STATIC, 'excercise.json'), "r") as json_file:
         data = json.load(json_file)
-        exi = data["Excercise 1"]
+        exi = data[excercise]
 
     # print(course)
     return exi

@@ -5,11 +5,21 @@
 
 
 <div class="container-fluid">
-    
-    {% for i in new %}
-    {{i.Topic}}
-    {% endfor %}
-    
+
+    <div class="container card mx-auto  ">
+        {% for core in intro %}
+        <h1>{{core.topic}}</h1>
+        <div class="card">
+            <p>{{core.content}}</p>
+            <img src="{{core.pic_url}}"
+                 alt="">
+        </div>
+
+        {% endfor %}
+        <a href="/excercise/{{intro.excercises}}">View exercise of this</a>
+
+    </div>
+
 </div>
 
 {% endblock %}

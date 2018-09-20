@@ -5,17 +5,21 @@
 
 
 <div class="container-fluid">
-<form action='{{ url_for('main.exercise') }}' method='POST'>
-    <ol>
-        {% for question in questions %}
+    <form action='/results'
+          method='POST'>
+        <ol>
+            {% for question in questions %}
             <li>{{question}}?</li>
             {% for choose in chooses[question] %}
-                <input type="radio" value="{{j}}" name="{{question}}">{{choose}}
+            <input type="radio"
+                   value="{{j}}"
+                   name="{{question}}">{{choose}}
             {% endfor %}
-        {% endfor %}
-    </ol>
-    <input type="submit" value="submit" />
-</form>
+            {% endfor %}
+        </ol>
+        <input type="submit"
+               value="submit" />
+    </form>
 
 </div>
 

@@ -1,7 +1,7 @@
 {
-    "Excercise 1": [{
+    "Computer Excercise": [{
         "Which of the following retains the information it’s storing when the power to the system is turned off": ["ROM", " CPU  ", "RAM", "DIMM"],
-        "Great Wall of China": ["China", "Beijing", "Shanghai", "Tianjin"],
+        "The brain of any computer system is": ["CPU", “ALU”, “Memory”, “Control unit”],
         "Petra": ["Maan Governorate", "Amman", "Zarqa", "Jerash"],
         "Machu Picchu": ["Cuzco Region", "Lima", "Piura", "Tacna"],
         "Egypt Pyramids": ["Giza", "Suez", "Luxor", "Tanta"],

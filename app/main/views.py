@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for, abort, json
+from flask import render_template, redirect, url_for, abort, json, request
 # settings.py
 import os
 from config import APP_STATIC, APP_ROOT
@@ -59,11 +59,15 @@ def index():
     '''
     home displays courses and view heading
     '''
-    courses = Course.get_courses()
+
+    intro = Courses("Computer Intro")
+    programming = Courses("Computer programming")
+    # course = Courses(course)
+    # courses = Course.get_courses()
 
     title = 'Home is best'
 
-    return render_template('index.html', title=title, courses=courses)
+    return render_template('index.html', title=title, intro=intro, programming=programming)
 
 
 @main.route('/course')
@@ -77,9 +81,10 @@ def course():
     # print(course)
     # course = Course.get_course(id)
     # exercise = Exercise.get_exercise(id)
-    new = Courses()
+    intro = Courses("Computer Intro")
+    programming = Courses("Computer programming")
 
-    return render_template('course.html', new=new)
+    return render_template('course.html', intro=intro)
 
 
 @main.route('/courses/add')
@@ -134,12 +139,13 @@ def newexercise(id):
     return render_template('newexercise.html', title='title', exerciseForm=exerciseForm)
 
 
-@main.route('/exercise', methods=['GET', 'POST'])
-def exercise():
+@main.route('/exercise/<exercise>', methods=['GET', 'POST'])
+def exercise(exercise):
     '''
     display exercise of course based on id
     '''
-    excercises = Excercise()
+
+    excercises = Excercise(exercise)
     questions_shuffled = shuffle(excercises)
 
     dictionary = ""
@@ -156,3 +162,19 @@ def exercise():
     # exercise = Exercise.get_exercise(id)
 
         return render_template('exercise.html', questions=questions_shuffled, chooses=dictionary)
+
+
+@main.route('/results', methods=['GET', 'POST'])
+def quiz_answers():
+    correct = 0
+
+    excercises = Excercise()
+
+    listed = ""
+    for item in excercises:
+        listed = [*item]
+    for i in listed:
+        answered = request.form[i]
+        if excercises[0][i][0] == answered:
+            correct = correct+1
+    return '<h1>Correct Answers: <u>'+str(correct)+'</u></h1>'

@@ -1,25 +1,84 @@
 {
-    "Computers": [{
+    "Computer Intro": [{
             "id": 1,
             "Topic": "Hardware",
-            "Content": "This is a hardware",
-            "pic_url": "http://howmanyarethere.net/wp-content/uploads/2013/06/Computer-Hardware-Monitor-System-Game.jpg"
+            "Content": "Hardware refers to the physical elements of a computer. This is also sometime called the machinery or the equipment of the computer. Examples of hardware in a computer are the keyboard, the monitor, the mouse and the central processing unit. However, most of a computer's hardware cannot be seen; in other words, it is not an external element of the computer, but rather an internal one, surrounded by the computer's casing (tower). A computer's hardware is comprised of many different parts, but perhaps the most important of these is the motherboard. The motherboard is made up of even more parts that power and control the computer. ",
+            "pic_url": "http://howmanyarethere.net/wp-content/uploads/2013/06/Computer-Hardware-Monitor-System-Game.jpg",
+            "Excercises": "Computer Excercise"
         },
         {
             "id": 2,
             "Topic": "Software",
-            "Content": "This is a software",
-            "pic_url": "https://blog.junkmail.co.za/wp-content/uploads/2014/09/computer-software.jpg"
+            "Content": "Software,  commonly known as programs or apps, consists of all the instructions that tell the hardware how to perform a task. These instructions come from a software developer in the form that will be accepted by the platform (operating system + CPU) that they are based on. For example, a program that is designed for the Windows operating system will only work for that specific operating system. Compatibility of software will vary as the design of the software and the operating system differ. Software that is designed for Windows XP may experience a compatibility issue when running under Windows 2000 or NT. Software is capable of performing many tasks, as opposed to hardware which can only perform mechanical tasks that they are designed for. Software provides the means for accomplishing many different tasks with the same basic hardware. Practical computer systems divide software systems into two major classes:",
+            "pic_url": " http://www.junkmail.co.za/blog/wp-content/uploads/2014/09/computer-software.jpg",
+            "Excercises": "Computer Excercise"
+
         }, {
             "id": 3,
-            "Topic": "Git",
-            "Content": "This is a git",
-            "pic_url": "https://www.technotification.com/wp-content/uploads/2018/04/git-commands.jpg"
+            "Topic": "Input Devices",
+            "Content": "An input device is any hardware device that sends data to a computer, allowing you to interact with and control it. The picture shows a Logitech trackball mouse, which is an example of an input device. The most commonly used or primary input devices on a computer are the keyboard and mouse. However, there are dozens of other devices that can also be used to input data into the computer. Every computer comes with a keyboard and a mouse (touchpad with laptop), which are considered input devices. As far as other input devices, it depends on what was included with your computer and what is attached to it. ",
+            "pic_url": "http://slideplayer.com/2026313/8/images/33/Common+Input+Devices+Mouse+Touch+Screen+Keyboard+Scanner+Mic+Webcam.jpg",
+            "Excercises": "Computer Excercise"
+
+        },
+        {
+            "id": 4,
+            "Topic": "Output device",
+            "Content": "An output device is any peripheral that receives data from a computer, usually for display, projection, or physical reproduction. For example, the image shows an inkjet printer, an output device that can make a hard copy of any information shown on your monitor, which is another example of an output device. Monitors and printers are two of the most common output devices used with a computer. Every computer has a monitor or display screen, a sound card (or on-board sound on the motherboard), and a video card (or on-board video on the motherboard), which are all output devices. A printer is also very commonly used with computers. Depending on the type of computer and how the computer is used, other output devices may be used with a computer.",
+            "pic_url": "http://3.bp.blogspot.com/-LRd0ReiSzl4/Uves6IV7ewI/AAAAAAAAAQA/m92uFj5FhA8/s1600/PeripheralInputOutput.jpg",
+            "Excercises": "Computer Excercise"
+
+        },
+        {
+            "id": 5,
+            "Topic": "Binary",
+            "Content": "Binary (or base-2) a numeric system that only uses two digits — 0 and 1.Computers operate in binary, meaning they store data and perform calculations using only zeros and ones. A single binary digit can only represent True (1) or False (0) in boolean logic. However, multiple binary digits can be used to represent large numbers and perform complex functions. In fact, any integer can be represented in binary.",
+            "pic_url": "https://cdn-images-1.medium.com/max/1600/1*2uhvJFviQtys1KI3XgxQJw.png",
+            "Excercises": "Computer Excercise"
+
         }
     ],
-    "Course 2": [{
-            "HTML": "Lorem ipsum dolor sit amet"
+    "Computer programming": [{
+            "id": 1,
+            "Topic": "Computer programming",
+            "Content": "is the process of designing and building an executable computer program for accomplishing a specific computing task. Programming involves tasks such as analysis, generating algorithms, profiling algorithms' accuracy and resource consumption, and the implementation of algorithms in a chosen programming language (commonly referred to as coding[1][2]). The source code of a program is written in one or more programming languages. The purpose of programming is to find a sequence of instructions that will automate the performance of a task for solving a given problem. The process of programming thus often requires expertise in several different subjects, including knowledge of the application domain, specialized algorithms, and formal logic. Related tasks include testing, debugging, maintaining a program's source code, implementation of build systems, and management of derived artifacts such as machine code of computer programs. These might be considered part of the programming process, but often the term software development is used for this larger process with the term programming, implementation, or coding reserved for the actual writing of source code. Software engineering combines engineering techniques with software development practices.",
+            "pic_url": "http://howmanyarethere.net/wp-content/uploads/2013/06/Computer-Hardware-Monitor-System-Game.jpg",
+            "Excercises": "Computer Programming Excercise"
+        },
+        {
+            "id": 2,
+            "Topic": "Java Script",
+            "Content": "JavaScript, often abbreviated as JS, is a high-level, interpreted programming language. It is a language which is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm. Alongside HTML and CSS, JavaScript is one of the three core technologies of the World Wide Web.[8] JavaScript enables interactive web pages and thus is an essential part of web applications. The vast majority of websites use it,[9] and all major web browsers have a dedicated JavaScript engine to execute it. As a multi-paradigm language, JavaScript supports event-driven, functional, and imperative (including object-oriented and prototype-based) programming styles. It has an API for working with text, arrays, dates, regular expressions, and basic manipulation of the DOM, but the language itself does not include any I/O, such as networking, storage, or graphics facilities, relying for these upon the host environment in which it is embedded. ",
+            "pic_url": "https://st.depositphotos.com/1796420/4113/v/950/depositphotos_41138921-stock-illustration-vector-icon-of-orange-javascript.jpg",
+            "Excercises": "Computer Programming Excercise"
+        },
+        {
+            "id": 3,
+            "Topic": "HTML",
+            "Content": "Many people think that creating a web page involves really complicated code that requires considerable studying to understand. This is not necessarily the case. HyperText, is just a fancy word for text that links to something else. Markup Language means, is marked up with instructions written inside of angle brackets <>, known as tags. The actual language of HTML is the instructions that we wrap around the text to format it, instructions for many other things like images, links, videos and more.    ",
+            "pic_url": "https://www.writeraccess.com/blog/wp-content/uploads/2014/08/blog-html-5.png",
+            "Excercises": "Computer Programming Excercise"
+        },
+        {
+            "id": 4,
+            "Topic": "CSS",
+            "Content": "Cascading Style Sheets, fondly referred to as CSS, is a simple design language intended to simplify the process of making web pages presentable. CSS handles the look and feel part of a web page. Using CSS, you can control the color of the text, the style of fonts, the spacing between paragraphs, how columns are sized and laid out, what background images or colors are used, as well as a variety of other effects. CSS is easy to learn and understand but it provides a powerful control over the presentation of an HTML document. CSS is combined with HTML. f computer architecture. As of 2016, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers. Java was originally developed by James Gosling at Sun Microsystems(which has since been acquired by Oracle Corporation) and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.  ",
+            "pic_url": "http://howmanyarethere.net/wp-content/uploads/2013/06/Computer-Hardware-Monitor-System-Game.jpg",
+            "Excercises": "Computer Programming Excercise"
+        },
+        {
+            "id": 5,
+            "Topic": "Java",
+            "Content": "Java is a general-purpose computer-programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers write once, run anywhere (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to byte code that can run on any Java virtual machine (JVM) regardless",
+            "pic_url": "https://spzone-simpleprogrammer.netdna-ssl.com/wp-content/uploads/2016/11/Untitled-1-6-1024x576.png",
+            "Excercises": "Computer Programming Excercise"
+        },
+        {
+            "id": 6,
+            "Topic": "Python",
+            "Content": "Python features a dynamic type system and automatic memory management. It supports multiple programming paradigms, including object-oriented, imperative, functional and procedural, and has a large and comprehensive standard library. Python interpreters are available for many operating systems. CPython, the reference implementation of Python, is open source software and has a community-based development model, as do nearly all of Python's other implementations. Python and CPython are managed by the non-profit Python Software Foundation. ",
+            "pic_url": "http://www.vizteams.com/wp-content/uploads/2013/08/python-logo-master.png",
+            "Excercises": "Computer Programming Excercise"
         }
-
     ]
 }

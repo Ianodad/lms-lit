@@ -19,19 +19,45 @@ from .forms import CourseForm, ExerciseForm, AnswersForm
 # import models
 from ..models import Student, Course, Exercise
 
-from ..content import Questions
-# with open(os.path.join(APP_STATIC, 'content.txt')) as f:
-#     content = f.read()
 
-#     print(content)
-# with open('content.txt', 'r') as f:
-#     data = f.readlines()
+from ..content import Courses, Excercise
+
+import random
+from random import sample, shuffle
+
+
+def shuffle(q):
+    '''
+    shuffles keys of dictionaries
+    '''
+    listed = ""
+    for item in q:
+        listed = [*item]
+
+    # shufle words
+    shuffled = sample(listed, len(listed))
+    return shuffled
+
+
+# def shuffle(q):
+#     """
+#     This function is for shuffling
+#     the dictionary elements.
+#     """
+#     selected_keys = []
+#     i = 0
+#     while i < len(q):
+#         current_selection = random.choice(q.keys())
+#         if current_selection not in selected_keys:
+#             selected_keys.append(current_selection)
+#             i = i+1
+#     return selected_keys
 
 
 @main.route('/')
 def index():
     '''
-    home displays courses and view heading  
+    home displays courses and view heading
     '''
     courses = Course.get_courses()
 
@@ -51,10 +77,8 @@ def course():
     # print(course)
     # course = Course.get_course(id)
     # exercise = Exercise.get_exercise(id)
-    new = Questions()
-    # topic = new['Topic']
-    # content = new['Content']
-    # image_url = new['pic_url']
+    new = Courses()
+
     return render_template('course.html', new=new)
 
 
@@ -110,23 +134,25 @@ def newexercise(id):
     return render_template('newexercise.html', title='title', exerciseForm=exerciseForm)
 
 
-@main.route('/exercise/<int:id>')
-def exercise(id):
+@main.route('/exercise', methods=['GET', 'POST'])
+def exercise():
     '''
     display exercise of course based on id
     '''
-    answersForm = AnswersForm()
-    if answersForm.validate_on_submit():
-        answer = exerciseForm.answer.data
-        new_exercise = Exercise(
-            answer=answer, exercise_id=id, student_id=current_user.id, course_id=id)
-        new_exercise.save_exercise()
+    excercises = Excercise()
+    questions_shuffled = shuffle(excercises)
 
-    exercise = Exercise.get_exercise(id)
+    dictionary = ""
 
-    return render_template('exercises.html', exercise=exercise, answersForm=answersForm)
+    for item in excercises:
+        dictionary = item
+    # answersForm = AnswersForm()
+    # if answersForm.validate_on_submit():
+    #     answer = exerciseForm.answer.data
+    #     new_exercise = Exercise(
+    #         answer=answer, exercise_id=id, student_id=current_user.id, course_id=id)
+    #     new_exercise.save_exercise()
 
+    # exercise = Exercise.get_exercise(id)
 
-[
-
-]
+        return render_template('exercise.html', questions=questions_shuffled, chooses=dictionary)

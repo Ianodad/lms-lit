@@ -5,12 +5,17 @@
 
 
 <div class="container-fluid">
-
-    {% for pitch in posts %}
-
-    <h1>{{exercise.question}}</h1>
-    {{ wtf.quick_form(answersForm) }}
-    {% endfor %}
+<form action='{{ url_for('main.exercise') }}' method='POST'>
+    <ol>
+        {% for question in questions %}
+            <li>{{question}}?</li>
+            {% for choose in chooses[question] %}
+                <input type="radio" value="{{j}}" name="{{question}}">{{choose}}
+            {% endfor %}
+        {% endfor %}
+    </ol>
+    <input type="submit" value="submit" />
+</form>
 
 </div>
 

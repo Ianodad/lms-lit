@@ -10,6 +10,6 @@ def Questions():
 
     with open(os.path.join(APP_STATIC, 'content.json'), "r") as json_file:
         data = json.load(json_file)
-        cont = data["Computers"][0]
+        cont = data["Computers"]
     # print(course)
     return cont

@@ -52,10 +52,10 @@ def course():
     # course = Course.get_course(id)
     # exercise = Exercise.get_exercise(id)
     new = Questions()
-    topic = new['Topic']
-    content = new['Content']
-    image_url = new['pic_url']
-    return render_template('course.html', course=course, exercise=exercise, topic=topic, content=content, image_url=image_url)
+    # topic = new['Topic']
+    # content = new['Content']
+    # image_url = new['pic_url']
+    return render_template('course.html', new=new)
 
 
 @main.route('/courses/add')

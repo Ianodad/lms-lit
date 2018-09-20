@@ -1,9 +1,22 @@
 {
     "Computers": [{
-        "Topic": "Hardware",
-        "Content": "This is a hardware",
-        "pic_url": "http://howmanyarethere.net/wp-content/uploads/2013/06/Computer-Hardware-Monitor-System-Game.jpg"
-    }],
+            "id": 1,
+            "Topic": "Hardware",
+            "Content": "This is a hardware",
+            "pic_url": "http://howmanyarethere.net/wp-content/uploads/2013/06/Computer-Hardware-Monitor-System-Game.jpg"
+        },
+        {
+            "id": 2,
+            "Topic": "Software",
+            "Content": "This is a software",
+            "pic_url": "https://blog.junkmail.co.za/wp-content/uploads/2014/09/computer-software.jpg"
+        }, {
+            "id": 3,
+            "Topic": "Git",
+            "Content": "This is a git",
+            "pic_url": "https://www.technotification.com/wp-content/uploads/2018/04/git-commands.jpg"
+        }
+    ],
     "Course 2": [{
             "HTML": "Lorem ipsum dolor sit amet"
         }

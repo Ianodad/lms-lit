@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-lg  mx-auto mx-5 d-flex flex-row">
+<nav class="navbar navbar-expand-lg  mx-auto mx-5 d-flex flex-row"
+     style="background-color: #1B618A;">
     <a class="navbar-brand"
-       href="{{url_for('main.index')}}">LMS-LITE</a>
+       href="{{url_for('main.index')}}"> <img src="../static/images/56.png"
+             width="120"> </a>
     <button class="navbar-toggler"
             type="button"
             data-toggle="collapse"
@@ -10,7 +12,7 @@
             aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse float-right"
+    <div class="collapse navbar-collapse" style="float: right;"
          id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
@@ -39,7 +41,7 @@
                 <a class="nav-link"
                    href="{{url_for('auth.register')}}">Register User</a>
             </li>
-<li class="ml-2"><a href="{{url_for('auth.login')}}">Sign in</a></li>
+            <li class="ml-2"><a href="{{url_for('auth.login')}}">Sign in</a></li>
             {%endif%}
         </ul>
         <!--<ul class="navbar-nav">

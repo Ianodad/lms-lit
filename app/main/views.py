@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for, abort
+from flask import render_template, redirect, url_for, abort, json
 # settings.py
 import os
 from config import APP_STATIC, APP_ROOT
@@ -12,13 +12,14 @@ from .. import db
 from flask_login import login_required, current_user
 # importing wft
 from flask_wtf import FlaskForm
+from config import APP_STATIC, APP_ROOT
 
 from .forms import CourseForm, ExerciseForm, AnswersForm
 
 # import models
 from ..models import Student, Course, Exercise
 
-# from ..content import Questions
+from ..content import Questions
 # with open(os.path.join(APP_STATIC, 'content.txt')) as f:
 #     content = f.read()
 
@@ -36,21 +37,25 @@ def index():
 
     title = 'Home is best'
 
-    # new = Questions()
-
     return render_template('index.html', title=title, courses=courses)
 
 
-@main.route('/courses/<int:id>')
+@main.route('/course')
 def course():
     '''
-    displays courses based on when click 
+    displays courses based on when click
     '''
-
-    course = Course.get_course(id)
-    exercise = Exercise.get_exercise(id)
-
-    return render_template('course.html', course=course, exercise=exercise)
+    # SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+    # json_url = os.path.join(SITE_ROOT, "static", "content.txt")
+    # course = json.load(open(json_url))
+    # print(course)
+    # course = Course.get_course(id)
+    # exercise = Exercise.get_exercise(id)
+    new = Questions()
+    topic = new['Topic']
+    content = new['Content']
+    image_url = new['pic_url']
+    return render_template('course.html', course=course, exercise=exercise, topic=topic, content=content, image_url=image_url)
 
 
 @main.route('/courses/add')

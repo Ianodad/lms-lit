@@ -1,8 +1,25 @@
 {
+    "Intro Excercise": [{
+        "Which of the following retains the information it’s storing when the power to the system is turned off": ["ROM", " CPU  ", "RAM", "DIMM"],
+        "The brain of any computer system is": ["CPU", "ALU", "Memory", "Control unit"],
+        "Types of software programs areTypes of software programs are": ["both A and B", "Application programs", "Logical programs", "Logical programs"],
+        "The Operating System is a": ["System Software", "Application Software", "Utility Software", "Malware"],
+        "The process of carrying out a command is called": ["Executing", "Fetching", "Controlling", "Storing"],
+        "A Database is used to": ["Store and Organize data in records", "Store and Organize papers", "Store and Organize records in files", "Store and Organize records in fields"],
+        "The term Icon refers to": ["A Picture of symbol that represents a command", "A Photograph", "A Leader", "A Symbol of Power"]
+    }],
+    "Programming Excercise": [{
+        "Which one is the first fully supported 64-bit operating system": ["Windows Vista", "Mac", "Linux", "Windows HP"],
+        "Which one of the following is not a web browser": ["WWW", "CHROME", "SAFARI", "FIREFOX"],
+        "In computer world, Trojan refers Trojan": ["Malware", "Virus", "Worm", "Spyware"],
+        "Which one of the following is a programming language": ["HTML", "HTTP", "HPML", "FTP"],
+        "Which protocol is used to send email": ["SMTP", "HTTP", "POP3", "SSH"]
+
+    }],
     "Computer Excercise": [{
         "Which of the following retains the information it’s storing when the power to the system is turned off": ["ROM", " CPU  ", "RAM", "DIMM"],
-        "The brain of any computer system is": ["CPU", “ALU”, “Memory”, “Control unit”],
-        "Petra": ["Maan Governorate", "Amman", "Zarqa", "Jerash"],
+        "The brain of any computer system is": ["CPU", "ALU", "Memory", "Control unit "],
+        "Types of software programs areTypes of software programs are": ["both A and B", "Application programs", "Logical programs", "Logical programs"],
         "Machu Picchu": ["Cuzco Region", "Lima", "Piura", "Tacna"],
         "Egypt Pyramids": ["Giza", "Suez", "Luxor", "Tanta"],
         "Colosseum": ["Rome", "Milan", "Bari", "Bologna"],

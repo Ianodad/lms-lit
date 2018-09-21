@@ -70,8 +70,9 @@ def index():
     return render_template('index.html', title=title, intro=intro, programming=programming)
 
 
-@main.route('/course')
-def course():
+@main.route('/course/intro')
+@login_required
+def courseIntro():
     '''
     displays courses based on when click
     '''
@@ -82,32 +83,23 @@ def course():
     # course = Course.get_course(id)
     # exercise = Exercise.get_exercise(id)
     intro = Courses("Computer Intro")
-    programming = Courses("Computer programming")
 
-    return render_template('course.html', intro=intro)
+    return render_template('courseintro.html', intro=intro)
 
 
-@main.route('/courses/add')
-def newcourse():
+@main.route('/course/programming')
+@login_required
+def coursepro():
     '''
-    prompts user to add new course
+    displays courses based on when click
     '''
+    pro = Courses("Computer programming")
 
-    courseForm = CourseForm()
-
-    if courseForm.validate_on_submit():
-        course = courseForm.course.data
-        content = courseForm.content.data
-
-        new_course = Course(course=course, content=content)
-        new_course.save_course()
-
-        return redirect(url_for('main.curriculum'))
-
-    return render_template('newcourse.html', courseForm=courseForm)
+    return render_template('coursepro.html', pro=pro)
 
 
 @main.route('/curriculum')
+@login_required
 def curriculum():
     '''
     contains all courses and exercises for view of teacher
@@ -119,56 +111,66 @@ def curriculum():
     return render_template('curriculum.html', courses=courses, exercises=exercises)
 
 
-@main.route('/exercise/add/<int:id>')
-def newexercise(id):
-    '''
-    allows teacher to add new exercise
-    '''
-    exerciseForm = ExerciseForm()
-
-    if exerciseForm.validate_on_submit():
-        # exercise = exerciseForm. exercise.data
-        question = exerciseForm.question.data
-        # answers = exerciseForm.answers.data
-
-        new_exercise = Exercise(question=question, course_id=id)
-        new_exercise.save_exercise()
-
-        return redirect(url_for('main.curriculum'))
-
-    return render_template('newexercise.html', title='title', exerciseForm=exerciseForm)
-
-
-@main.route('/exercise/<exercise>', methods=['GET', 'POST'])
-def exercise(exercise):
+@main.route('/exercise/Intro', methods=['GET', 'POST'])
+@login_required
+def exercise():
     '''
     display exercise of course based on id
     '''
 
-    excercises = Excercise(exercise)
+    excercises = Excercise("Intro Excercise")
     questions_shuffled = shuffle(excercises)
 
     dictionary = ""
 
     for item in excercises:
         dictionary = item
-    # answersForm = AnswersForm()
-    # if answersForm.validate_on_submit():
-    #     answer = exerciseForm.answer.data
-    #     new_exercise = Exercise(
-    #         answer=answer, exercise_id=id, student_id=current_user.id, course_id=id)
-    #     new_exercise.save_exercise()
 
-    # exercise = Exercise.get_exercise(id)
-
-        return render_template('exercise.html', questions=questions_shuffled, chooses=dictionary)
+        return render_template('exerciseintro.html', questions=questions_shuffled, chooses=dictionary)
 
 
-@main.route('/results', methods=['GET', 'POST'])
-def quiz_answers():
+@main.route('/exercise/programming', methods=['GET', 'POST'])
+@login_required
+def exerciseintro():
+    '''
+    display exercise of course based on id
+    '''
+
+    excercises = Excercise("Intro Excercise")
+    questions_shuffled = shuffle(excercises)
+
+    dictionary = ""
+
+    for item in excercises:
+        dictionary = item
+
+        return render_template('exercisepro.html', questions=questions_shuffled, chooses=dictionary)
+
+
+@main.route('/results/intro', methods=['GET', 'POST'])
+@login_required
+def quiz_answersintro():
     correct = 0
 
-    excercises = Excercise()
+    excercises = Excercise("Intro Excercise")
+
+    listed = ""
+    for item in excercises:
+        listed = [*item]
+    for i in listed:
+        answered = request.form[i]
+        print(answered)
+        if excercises[0][i][0] == answered:
+            correct = correct+1
+    return '<h1>Correct Answers: <u>'+str(correct)+'</u></h1>'
+
+
+@main.route('/results/programming', methods=['GET', 'POST'])
+@login_required
+def quiz_answerspro():
+    correct = 0
+
+    excercises = Excercise("Programming Excercise")
 
     listed = ""
     for item in excercises:

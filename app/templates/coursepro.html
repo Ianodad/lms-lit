@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+{% block content %}
+
+
+<div class="container-fluid">
+    <h2>PROGRAMMING INTRODUCTION</h2>
+    <div class="container card mx-auto  ">
+        {% for core in pro %}
+        <h1>{{core.topic}}</h1>
+        <div class="card">
+            <p>{{core.content}}</p>
+            <img src="{{core.pic_url}}"
+                 alt="">
+        </div>
+        {% endfor %}
+    </div>
+    <p> Click here to view course <a href="{{url_for('main.exercise')}}">excercise</a></p>
+
+
+</div>
+
+{% endblock %}

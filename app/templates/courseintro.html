@@ -5,7 +5,7 @@
 
 
 <div class="container-fluid">
-
+    <h1>COMPUTER INTRODUCTION</h1>
     <div class="container card mx-auto  ">
         {% for core in intro %}
         <h1>{{core.topic}}</h1>
@@ -15,8 +15,7 @@
                  alt="">
         </div>
 
-        {% endfor %}
-        <a href="/excercise/{{intro.excercises}}">View exercise of this</a>
+        {% endfor %}<p> Click here to view course <a href="{{url_for('main.exerciseintro')}}">excercise</a></p>
 
     </div>
 

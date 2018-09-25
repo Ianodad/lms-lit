@@ -30,11 +30,12 @@ class ProdConfig(Config):
     '''
     Production congig for child
     '''
-    # SQLALCHEMY_DATABASE_URI = os.environ.get("HEROKU_POSTGRESQL_PUCE_URL")
+    SQLALCHEMY_DATABASE_URI = os.environ.get("HEROKU_POSTGRESQL_PUCE_URL")
+
 
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://renegade:lmslite@localhost/lmslite'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://renegade:lmslite@localhost/lmslite'
 
     DEBUG = True
 

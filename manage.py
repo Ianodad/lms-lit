@@ -8,8 +8,9 @@ from flask_script import Manager, Server
 
 # user imports models
 from app.models import Student, Exercise, Course
+app = create_app('production')
 
-app = create_app('development')
+# app = create_app('development')
 
 manager = Manager(app)
 

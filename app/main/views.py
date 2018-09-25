@@ -65,14 +65,12 @@ def index():
     # course = Courses(course)
     # courses = Course.get_courses()
 
-    title = 'Home is best'
-
-    return render_template('index.html', title=title, intro=intro, programming=programming)
+    return render_template('index.html', intro=intro, programming=programming)
 
 
 @main.route('/course/intro')
 @login_required
-def courseIntro():
+def courseintro():
     '''
     displays courses based on when click
     '''
